@@ -969,6 +969,144 @@ body {
     transform: translateX(5px);
 }
 
+/* Inventory Page Styling */
+.inventory-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-top: 80px;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.header-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #2c5aa0, #1e3f73);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.header-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 800;
+}
+
+.header-text p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.header-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.header-stats .stat-item {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 120px;
+}
+
+.header-stats .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c5aa0;
+    margin-bottom: 0.5rem;
+}
+
+.header-stats .stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.showroom-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Enhanced Filters */
+.enhanced-filters {
+    padding: 60px 0;
+    background: white;
+}
+
+.filter-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.filter-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 800;
+}
+
+.filter-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
 /* Footer */
 .footer {
     background: #333;
