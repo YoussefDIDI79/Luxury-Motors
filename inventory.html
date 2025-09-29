@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Inventory - Elite Motors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Elite Motors</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="inventory.html" class="nav-link active">Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Vehicle Inventory</h1>
+            <p>Browse our extensive collection of premium vehicles</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="brand-filter">Brand:</label>
+                    <select id="brand-filter">
+                        <option value="">All Brands</option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="audi">Audi</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="honda">Honda</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Max Price:</label>
+                    <select id="price-filter">
+                        <option value="">Any Price</option>
+                        <option value="30000">Under $30,000</option>
+                        <option value="50000">Under $50,000</option>
+                        <option value="70000">Under $70,000</option>
+                        <option value="100000">Under $100,000</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter">Year:</label>
+                    <select id="year-filter">
+                        <option value="">Any Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory Grid -->
+    <section class="inventory">
+        <div class="container">
+            <div class="inventory-grid" id="inventory-grid">
+                <!-- Car 1 -->
+                <div class="car-card" data-brand="bmw" data-price="65000" data-year="2024">
+                    <div class="car-image">
+                        <div class="placeholder-image">BMW X5 2024</div>
+                        <div class="car-badge">Featured</div>
+                    </div>
+                    <div class="car-details">
+                        <h3>2024 BMW X5 xDrive40i</h3>
+                        <p class="price">$65,000</p>
+                        <div class="car-info-grid">
+                            <div class="info-item">
+                                <span class="label">Year:</span>
+                                <span class="value">2024</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mileage:</span>
+                                <span class="value">22,000 miles</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Engine:</span>
+                                <span class="value">3.0L Twin Turbo</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Drive:</span>
+                                <span class="value">All-Wheel Drive</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=1" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(1)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card" data-brand="mercedes" data-price="52000" data-year="2023">
+                    <div class="car-image">
+                        <div class="placeholder-image">Mercedes C-Class</div>
+                    </div>
+                    <div class="car-details">
+                        <h3>2023 Mercedes C-Class C300</h3>
+                        <p class="price">$52,000</p>
+                        <div class="car-info-grid">
+                            <div class="info-item">
+                                <span class="label">Year:</span>
+                                <span class="value">2023</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mileage:</span>
+                                <span class="value">15,000 miles</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Engine:</span>
+                                <span class="value">2.0L Turbo</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Drive:</span>
+                                <span class="value">Rear-Wheel Drive</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=2" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(2)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card" data-brand="audi" data-price="48000" data-year="2024">
+                    <div class="car-image">
+                        <div class="placeholder-image">Audi A4 2024</div>
+                    </div>
+                    <div class="car-details">
+                        <h3>2024 Audi A4 Premium Plus</h3>
+                        <p class="price">$48,000</p>
+                        <div class="car-info-grid">
+                            <div class="info-item">
+                                <span class="label">Year:</span>
+                                <span class="value">2024</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mileage:</span>
+                                <span class="value">8,500 miles</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Engine:</span>
+                                <span class="value">2.0L TFSI</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Drive:</span>
+                                <span class="value">Quattro AWD</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=3" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(3)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 4 -->
+                <div class="car-card" data-brand="toyota" data-price="35000" data-year="2023">
+                    <div class="car-image">
+                        <div class="placeholder-image">Toyota Camry 2023</div>
+                    </div>
+                    <div class="car-details">
+                        <h3>2023 Toyota Camry XLE</h3>
+                        <p class="price">$35,000</p>
+                        <div class="car-info-grid">
+                            <div class="info-item">
+                                <span class="label">Year:</span>
+                                <span class="value">2023</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mileage:</span>
+                                <span class="value">12,000 miles</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Engine:</span>
+                                <span class="value">2.5L Hybrid</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Drive:</span>
+                                <span class="value">Front-Wheel Drive</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=4" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(4)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 5 -->
+                <div class="car-card" data-brand="honda" data-price="28000" data-year="2022">
+                    <div class="car-image">
+                        <div class="placeholder-image">Honda Accord 2022</div>
+                    </div>
+                    <div class="car-details">
+                        <h3>2022 Honda Accord Sport</h3>
+                        <p class="price">$28,000</p>
+                        <div class="car-info-grid">
+                            <div class="info-item">
+                                <span class="label">Year:</span>
+                                <span class="value">2022</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mileage:</span>
+                                <span class="value">25,000 miles</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Engine:</span>
+                                <span class="value">1.5L Turbo</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Drive:</span>
+                                <span class="value">Front-Wheel Drive</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=5" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(5)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 6 -->
+                <div class="car-card" data-brand="bmw" data-price="72000" data-year="2024">
+                    <div class="car-image">
+                        <div class="placeholder-image">BMW 330i 2024</div>
+                        <div class="car-badge">New</div>
+                    </div>
+                    <div class="car-details">
+                        <h3>2024 BMW 330i xDrive</h3>
+                        <p class="price">$72,000</p>
+                        <div class="car-info-grid">
+                            <div class="info-item">
+                                <span class="label">Year:</span>
+                                <span class="value">2024</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Mileage:</span>
+                                <span class="value">5,000 miles</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Engine:</span>
+                                <span class="value">2.0L TwinPower</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Drive:</span>
+                                <span class="value">All-Wheel Drive</span>
+                            </div>
+                        </div>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=6" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(6)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Elite Motors</h3>
+                    <p>Your trusted partner for premium vehicles since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Inventory</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 123 Auto Plaza, Car City, CC 12345</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@elitemotors.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                    <p>Saturday: 9:00 AM - 6:00 PM</p>
+                    <p>Sunday: 12:00 PM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elite Motors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
