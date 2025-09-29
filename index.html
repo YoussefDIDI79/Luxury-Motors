@@ -37,22 +37,52 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Find Your Perfect Vehicle</h1>
-            <p>Discover premium cars with exceptional quality and unbeatable prices</p>
-            <div class="hero-buttons">
-                <a href="inventory.html" class="btn btn-primary">View Inventory</a>
-                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-            </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-background">
+            <img src="attached_assets/stock_images/luxury_bmw_x5_suv_ca_ad97329a.jpg" alt="Luxury BMW X5 SUV" class="hero-bg-image">
         </div>
-        <div class="hero-image">
-            <div class="car-showcase">
-                <div class="car-card featured">
-                    <h3>Featured Vehicle</h3>
-                    <div class="car-info">
-                        <h4>2024 BMW X5</h4>
-                        <p>Starting at $65,000</p>
-                        <a href="car-detail.html?id=1" class="btn btn-outline">View Details</a>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">🏆 #1 Premium Dealership</div>
+                <h1>Find Your <span class="highlight">Dream Car</span> Today</h1>
+                <p>Experience luxury, performance, and excellence with our carefully curated collection of premium vehicles</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Cars Sold</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">14</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="inventory.html" class="btn btn-primary">🚗 Browse Inventory</a>
+                    <a href="contact.html" class="btn btn-secondary">📞 Get Quote</a>
+                    <button class="btn btn-outline" onclick="scrollToCalculator()">💰 Finance Calculator</button>
+                </div>
+            </div>
+            <div class="hero-featured-car">
+                <div class="featured-car-card">
+                    <div class="car-badge">🔥 HOT DEAL</div>
+                    <h3>Featured Special</h3>
+                    <h4>2024 BMW X5 xDrive40i</h4>
+                    <div class="price-section">
+                        <span class="original-price">$68,000</span>
+                        <span class="sale-price">$65,000</span>
+                    </div>
+                    <ul class="quick-features">
+                        <li>✓ All-Wheel Drive</li>
+                        <li>✓ Premium Package</li>
+                        <li>✓ Low Mileage</li>
+                    </ul>
+                    <div class="cta-buttons">
+                        <a href="car-detail.html?id=1" class="btn btn-primary-small">View Details</a>
+                        <button class="btn btn-secondary-small" onclick="scheduleTest(1)">Test Drive</button>
                     </div>
                 </div>
             </div>
@@ -62,53 +92,199 @@
     <!-- Featured Cars Section -->
     <section class="featured-cars">
         <div class="container">
-            <h2>Featured Vehicles</h2>
+            <div class="section-header">
+                <h2>🌟 Premium Vehicle Collection</h2>
+                <p>Hand-picked luxury vehicles with exceptional quality and performance</p>
+                <div class="filter-quick-buttons">
+                    <button class="filter-btn active" data-filter="all">All Vehicles</button>
+                    <button class="filter-btn" data-filter="luxury">Luxury</button>
+                    <button class="filter-btn" data-filter="suv">SUVs</button>
+                    <button class="filter-btn" data-filter="sedan">Sedans</button>
+                </div>
+            </div>
+            
             <div class="cars-grid">
-                <div class="car-card">
+                <div class="car-card" data-category="luxury suv">
                     <div class="car-image">
-                        <div class="placeholder-image">BMW X5 2024</div>
+                        <img src="attached_assets/stock_images/luxury_bmw_x5_suv_ca_ad97329a.jpg" alt="2024 BMW X5" class="car-img">
+                        <div class="car-overlay">
+                            <div class="car-badges">
+                                <span class="badge featured">FEATURED</span>
+                                <span class="badge certified">CERTIFIED</span>
+                            </div>
+                            <div class="car-actions-overlay">
+                                <button class="action-btn" onclick="scheduleTest(1)" title="Schedule Test Drive">🚗</button>
+                                <button class="action-btn" onclick="addToCompare(1)" title="Add to Compare">⚖️</button>
+                                <button class="action-btn" onclick="saveFavorite(1)" title="Save to Favorites">❤️</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="car-details">
-                        <h3>2024 BMW X5</h3>
-                        <p class="price">$65,000</p>
+                        <div class="car-header">
+                            <h3>2024 BMW X5 xDrive40i</h3>
+                            <div class="rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">(4.8)</span>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <span class="price">$65,000</span>
+                            <span class="price-type">or $899/mo</span>
+                        </div>
                         <ul class="car-specs">
-                            <li>3.0L Twin Turbo Engine</li>
-                            <li>All-Wheel Drive</li>
-                            <li>22,000 miles</li>
+                            <li><span class="spec-icon">🔧</span> 3.0L Twin Turbo Engine</li>
+                            <li><span class="spec-icon">🛞</span> All-Wheel Drive</li>
+                            <li><span class="spec-icon">📊</span> 22,000 miles</li>
                         </ul>
-                        <a href="car-detail.html?id=1" class="btn btn-primary">View Details</a>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=1" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(1)">Test Drive</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="car-card">
+                <div class="car-card" data-category="luxury sedan">
                     <div class="car-image">
-                        <div class="placeholder-image">Mercedes C-Class</div>
+                        <img src="attached_assets/stock_images/mercedes-benz_c-clas_34e9535f.jpg" alt="2023 Mercedes C-Class" class="car-img">
+                        <div class="car-overlay">
+                            <div class="car-badges">
+                                <span class="badge warranty">WARRANTY</span>
+                            </div>
+                            <div class="car-actions-overlay">
+                                <button class="action-btn" onclick="scheduleTest(2)" title="Schedule Test Drive">🚗</button>
+                                <button class="action-btn" onclick="addToCompare(2)" title="Add to Compare">⚖️</button>
+                                <button class="action-btn" onclick="saveFavorite(2)" title="Save to Favorites">❤️</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="car-details">
-                        <h3>2023 Mercedes C-Class</h3>
-                        <p class="price">$52,000</p>
+                        <div class="car-header">
+                            <h3>2023 Mercedes C-Class C300</h3>
+                            <div class="rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">(4.7)</span>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <span class="price">$52,000</span>
+                            <span class="price-type">or $719/mo</span>
+                        </div>
                         <ul class="car-specs">
-                            <li>2.0L Turbo Engine</li>
-                            <li>Rear-Wheel Drive</li>
-                            <li>15,000 miles</li>
+                            <li><span class="spec-icon">🔧</span> 2.0L Turbo Engine</li>
+                            <li><span class="spec-icon">🛞</span> Rear-Wheel Drive</li>
+                            <li><span class="spec-icon">📊</span> 15,000 miles</li>
                         </ul>
-                        <a href="car-detail.html?id=2" class="btn btn-primary">View Details</a>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=2" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(2)">Test Drive</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="car-card">
+                <div class="car-card" data-category="luxury sedan">
                     <div class="car-image">
-                        <div class="placeholder-image">Audi A4 2024</div>
+                        <img src="attached_assets/stock_images/audi_a4_luxury_sedan_ef16fdc9.jpg" alt="2024 Audi A4" class="car-img">
+                        <div class="car-overlay">
+                            <div class="car-badges">
+                                <span class="badge new">NEW ARRIVAL</span>
+                            </div>
+                            <div class="car-actions-overlay">
+                                <button class="action-btn" onclick="scheduleTest(3)" title="Schedule Test Drive">🚗</button>
+                                <button class="action-btn" onclick="addToCompare(3)" title="Add to Compare">⚖️</button>
+                                <button class="action-btn" onclick="saveFavorite(3)" title="Save to Favorites">❤️</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="car-details">
-                        <h3>2024 Audi A4</h3>
-                        <p class="price">$48,000</p>
+                        <div class="car-header">
+                            <h3>2024 Audi A4 Premium Plus</h3>
+                            <div class="rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">(4.9)</span>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <span class="price">$48,000</span>
+                            <span class="price-type">or $665/mo</span>
+                        </div>
                         <ul class="car-specs">
-                            <li>2.0L TFSI Engine</li>
-                            <li>Quattro AWD</li>
-                            <li>8,500 miles</li>
+                            <li><span class="spec-icon">🔧</span> 2.0L TFSI Engine</li>
+                            <li><span class="spec-icon">🛞</span> Quattro AWD</li>
+                            <li><span class="spec-icon">📊</span> 8,500 miles</li>
                         </ul>
-                        <a href="car-detail.html?id=3" class="btn btn-primary">View Details</a>
+                        <div class="car-actions">
+                            <a href="car-detail.html?id=3" class="btn btn-primary">View Details</a>
+                            <button class="btn btn-secondary" onclick="scheduleTest(3)">Test Drive</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-section">
+                <a href="inventory.html" class="btn btn-large">🚗 View All Vehicles (150+ Available)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator Section -->
+    <section class="loan-calculator" id="calculator">
+        <div class="container">
+            <div class="calculator-content">
+                <div class="calculator-info">
+                    <h2>💰 Auto Loan Calculator</h2>
+                    <p>Calculate your monthly payments and see what you can afford</p>
+                    <div class="calculator-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Rates as low as 2.9% APR</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Pre-approval in minutes</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Terms up to 84 months</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-form">
+                    <div class="calc-row">
+                        <div class="calc-group">
+                            <label>Vehicle Price</label>
+                            <input type="number" id="vehiclePrice" value="45000" min="1000" max="200000">
+                        </div>
+                        <div class="calc-group">
+                            <label>Down Payment</label>
+                            <input type="number" id="downPayment" value="9000" min="0">
+                        </div>
+                    </div>
+                    <div class="calc-row">
+                        <div class="calc-group">
+                            <label>Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="4.5" min="0" max="30" step="0.1">
+                        </div>
+                        <div class="calc-group">
+                            <label>Loan Term (months)</label>
+                            <select id="loanTerm">
+                                <option value="36">36 months</option>
+                                <option value="48">48 months</option>
+                                <option value="60" selected>60 months</option>
+                                <option value="72">72 months</option>
+                                <option value="84">84 months</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-calculator" onclick="calculateLoan()">Calculate Payment</button>
+                    <div class="calc-result" id="calcResult">
+                        <div class="result-item">
+                            <span class="result-label">Monthly Payment:</span>
+                            <span class="result-value" id="monthlyPayment">$673</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Interest:</span>
+                            <span class="result-value" id="totalInterest">$4,380</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,27 +294,65 @@
     <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <div class="section-header">
+                <h2>🛠️ Our Premium Services</h2>
+                <p>Complete automotive solutions for all your needs</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🚗</div>
-                    <h3>Quality Vehicles</h3>
-                    <p>We offer only the highest quality pre-owned and new vehicles, thoroughly inspected by our certified technicians.</p>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🚗</div>
+                    </div>
+                    <h3>Certified Pre-Owned</h3>
+                    <p>Every vehicle undergoes our rigorous 150-point inspection process by certified technicians.</p>
+                    <ul class="service-features">
+                        <li>✓ Multi-point inspection</li>
+                        <li>✓ Vehicle history report</li>
+                        <li>✓ Reconditioning guarantee</li>
+                    </ul>
+                    <a href="inventory.html" class="service-link">Browse Inventory →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">💰</div>
-                    <h3>Financing Options</h3>
-                    <p>Flexible financing solutions with competitive rates to help you drive away with your dream car today.</p>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">💰</div>
+                    </div>
+                    <h3>Flexible Financing</h3>
+                    <p>Competitive rates and flexible terms to fit your budget, with instant pre-approval available.</p>
+                    <ul class="service-features">
+                        <li>✓ Rates from 2.9% APR</li>
+                        <li>✓ Same-day approval</li>
+                        <li>✓ Trade-in accepted</li>
+                    </ul>
+                    <button class="service-link" onclick="scrollToCalculator()">Calculate Payment →</button>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🔧</div>
+                    </div>
                     <h3>Service & Maintenance</h3>
-                    <p>Expert service and maintenance to keep your vehicle running smoothly for years to come.</p>
+                    <p>Full-service automotive care center with certified technicians and genuine parts.</p>
+                    <ul class="service-features">
+                        <li>✓ Factory-trained techs</li>
+                        <li>✓ Genuine OEM parts</li>
+                        <li>✓ Service warranty</li>
+                    </ul>
+                    <a href="contact.html" class="service-link">Schedule Service →</a>
                 </div>
+                
                 <div class="service-card">
-                    <div class="service-icon">🏆</div>
-                    <h3>Warranty Protection</h3>
-                    <p>Comprehensive warranty coverage for peace of mind with every vehicle purchase.</p>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🏆</div>
+                    </div>
+                    <h3>Extended Warranty</h3>
+                    <p>Comprehensive coverage plans to protect your investment long after purchase.</p>
+                    <ul class="service-features">
+                        <li>✓ Bumper-to-bumper coverage</li>
+                        <li>✓ Roadside assistance</li>
+                        <li>✓ Nationwide network</li>
+                    </ul>
+                    <a href="contact.html" class="service-link">Learn More →</a>
                 </div>
             </div>
         </div>
