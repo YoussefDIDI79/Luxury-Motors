@@ -44,6 +44,307 @@
         </div>
     </section>
 
+    <!-- Loan Calculator Section -->
+    <section class="loan-calculator" style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="calculator-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: flex-start;">
+                <!-- Calculator Form -->
+                <div class="calculator-container" style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 40px; position: relative; overflow: hidden;">
+                    <div class="calculator-header" style="margin-bottom: 30px; text-align: center;">
+                        <h2 style="color: #2c3e50; font-size: 28px; margin-bottom: 10px; position: relative; display: inline-block;">
+                            <span style="position: relative; z-index: 1;">Loan Calculator</span>
+                            <span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #2c5aa0, #3a7bd5); border-radius: 2px;"></span>
+                        </h2>
+                        <p style="color: #6b7280; margin-top: 10px;">Calculate your monthly payment easily</p>
+                    </div>
+                    
+                    <div class="calculator-form" style="display: grid; gap: 20px;">
+                        <!-- Vehicle Price -->
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <label for="vehiclePrice" style="font-weight: 600; color: #374151; font-size: 15px;">Vehicle Price ($)</label>
+                                <span class="input-prefix" style="color: #6b7280; font-size: 14px;">USD</span>
+                            </div>
+                            <div style="position: relative;">
+                                <input type="number" id="vehiclePrice" placeholder="Enter vehicle price" min="0" step="100" 
+                                    style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; 
+                                    border-radius: 8px; font-size: 16px; transition: all 0.3s ease;
+                                    text-align: left; direction: ltr;">
+                                <span class="input-icon" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;">
+                                    <i class="fas fa-car" style="font-size: 18px;"></i>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Down Payment -->
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <label for="downPayment" style="font-weight: 600; color: #374151; font-size: 15px;">Down Payment ($)</label>
+                                <span class="input-prefix" style="color: #6b7280; font-size: 14px;">USD</span>
+                            </div>
+                            <div style="position: relative;">
+                                <input type="number" id="downPayment" placeholder="Enter down payment" min="0" step="100" 
+                                    style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; 
+                                    border-radius: 8px; font-size: 16px; transition: all 0.3s ease;
+                                    text-align: left; direction: ltr;">
+                                <span class="input-icon" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;">
+                                    <i class="fas fa-hand-holding-usd" style="font-size: 18px;"></i>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Interest Rate -->
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <label for="interestRate" style="font-weight: 600; color: #374151; font-size: 15px;">Interest Rate (%)</label>
+                                <span class="input-prefix" style="color: #6b7280; font-size: 14px;">%</span>
+                            </div>
+                            <div style="position: relative;">
+                                <input type="number" id="interestRate" placeholder="Enter interest rate" min="0" max="30" step="0.1" 
+                                    style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; 
+                                    border-radius: 8px; font-size: 16px; transition: all 0.3s ease;
+                                    text-align: left; direction: ltr;">
+                                <span class="input-icon" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;">
+                                    <i class="fas fa-percentage" style="font-size: 18px;"></i>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Loan Term -->
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label style="display: block; margin-bottom: 12px; font-weight: 600; color: #374151; font-size: 15px;">
+                                Loan Term (months)
+                            </label>
+                            <div class="term-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 10px;">
+                                <button type="button" class="term-btn active" data-months="36" 
+                                    style="padding: 12px; border: 2px solid #2c5aa0; background: #2c5aa0; 
+                                    color: white; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+                                    font-weight: 600; font-size: 14px;">
+                                    36 months
+                                </button>
+                                <button type="button" class="term-btn" data-months="48" 
+                                    style="padding: 12px; border: 2px solid #e5e7eb; background: #f9fafb; 
+                                    color: #4b5563; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+                                    font-weight: 500; font-size: 14px;">
+                                    48 months
+                                </button>
+                                <button type="button" class="term-btn" data-months="60" 
+                                    style="padding: 12px; border: 2px solid #e5e7eb; background: #f9fafb; 
+                                    color: #4b5563; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+                                    font-weight: 500; font-size: 14px;">
+                                    60 months
+                                </button>
+                                <button type="button" class="term-btn" data-months="72" 
+                                    style="padding: 12px; border: 2px solid #e5e7eb; background: #f9fafb; 
+                                    color: #4b5563; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+                                    font-weight: 500; font-size: 14px;">
+                                    72 months
+                                </button>
+                                <button type="button" class="term-btn" data-months="84" 
+                                    style="padding: 12px; border: 2px solid #e5e7eb; background: #f9fafb; 
+                                    color: #4b5563; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+                                    font-weight: 500; font-size: 14px;">
+                                    84 months
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Calculate Button -->
+                        <button type="button" id="calculateBtn" 
+                            style="width: 100%; padding: 16px; background: linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 100%); 
+                            color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; 
+                            cursor: pointer; margin: 10px 0 20px; transition: all 0.3s ease; position: relative;
+                            overflow: hidden; box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);">
+                            <span style="position: relative; z-index: 2;">Calculate Monthly Payment</span>
+                            <span class="btn-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                background: linear-gradient(135deg, #3a7bd5 0%, #2c5aa0 100%); opacity: 0; 
+                                transition: opacity 0.3s ease;"></span>
+                        </button>
+                        
+                        <!-- Results -->
+                        <div class="results" style="background: #f8fafc; border-radius: 10px; padding: 20px; 
+                            border: 1px solid #e2e8f0; margin-top: 10px;">
+                            <div class="result-item" style="display: flex; justify-content: space-between; 
+                                align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <span class="result-label" style="font-weight: 600; color: #4b5563; font-size: 15px;">
+                                    Monthly Payment:
+                                </span>
+                                <div style="display: flex; align-items: center;">
+                                    <span class="result-value" id="monthlyPayment" 
+                                        style="font-weight: 700; color: #2c5aa0; font-size: 20px; direction: ltr; display: inline-block;">
+                                        $0
+                                    </span>
+                                    <span style="margin-left: 8px; color: #6b7280; font-size: 14px;">/month</span>
+                                </div>
+                            </div>
+                            <div class="result-item" style="display: flex; justify-content: space-between; 
+                                align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <span class="result-label" style="font-weight: 500; color: #6b7280; font-size: 14px;">
+                                    Total Interest:
+                                </span>
+                                <span class="result-value" id="totalInterest" 
+                                    style="font-weight: 500; color: #4b5563; direction: ltr; display: inline-block;">
+                                    $0
+                                </span>
+                            </div>
+                            <div class="result-item" style="display: flex; justify-content: space-between; 
+                                align-items: center; padding: 12px 0 0;">
+                                <span class="result-label" style="font-weight: 500; color: #6b7280; font-size: 14px;">
+                                    Total Amount:
+                                </span>
+                                <span class="result-value" id="totalCost" 
+                                    style="font-weight: 600; color: #2c5aa0; direction: ltr; display: inline-block;">
+                                    $0
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; 
+                        background: rgba(44, 90, 160, 0.05); border-radius: 0 0 0 100%; z-index: 0;"></div>
+                </div>
+                
+                <!-- Car Info -->
+                <div class="car-info" style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+                    padding: 30px; height: 100%; position: relative; overflow: hidden;">
+                    <div style="position: relative; z-index: 1;">
+                        <h3 style="color: #2c3e50; font-size: 24px; margin-bottom: 15px; position: relative; display: inline-block;">
+                            <span style="position: relative; z-index: 1;">Vehicle Details</span>
+                            <span style="position: absolute; bottom: -5px; left: 0; width: 40px; height: 3px; 
+                                background: linear-gradient(90deg, #2c5aa0, #3a7bd5); border-radius: 2px;"></span>
+                        </h3>
+                        
+                        <div id="carCalculatedInfo" style="margin-top: 25px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; 
+                                border-bottom: 1px dashed #e2e8f0;">
+                                <span style="color: #6b7280; font-size: 14px;">Model:</span>
+                                <span id="carModel" style="font-weight: 500; color: #2c3e50;">2023 Toyota Camry</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; 
+                                border-bottom: 1px dashed #e2e8f0;">
+                                <span style="color: #6b7280; font-size: 14px;">Price:</span>
+                                <span id="carPrice" style="font-weight: 600; color: #2c5aa0; direction: ltr;">$35,000</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; 
+                                border-bottom: 1px dashed #e2e8f0;">
+                                <span style="color: #6b7280; font-size: 14px;">Mileage:</span>
+                                <span style="font-weight: 500; color: #2c3e50;">12,000 miles</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; 
+                                border-bottom: 1px dashed #e2e8f0;">
+                                <span style="color: #6b7280; font-size: 14px;">Fuel Type:</span>
+                                <span style="font-weight: 500; color: #2c3e50;">Hybrid</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; 
+                                border-bottom: 1px dashed #e2e8f0;">
+                                <span style="color: #6b7280; font-size: 14px;">Condition:</span>
+                                <span style="font-weight: 500; color: #10b981;">New</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background: #f0f7ff; padding: 15px; border-radius: 8px; border-right: 3px solid #3a7bd5;">
+                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <i class="fas fa-info-circle" style="color: #3a7bd5; margin-right: 10px; font-size: 18px;"></i>
+                                <span style="font-weight: 600; color: #2c3e50; font-size: 15px;">Additional Information</span>
+                            </div>
+                            <p style="color: #4b5563; font-size: 13px; line-height: 1.6; margin: 0;">
+                                This calculator provides an estimate. For an accurate quote, please contact our sales team.
+                            </p>
+                        </div>
+                        
+                        <button id="contactSalesBtn" 
+                            style="width: 100%; padding: 14px; background: white; color: #2c5aa0; 
+                            border: 2px solid #2c5aa0; border-radius: 8px; font-size: 15px; 
+                            font-weight: 600; margin-top: 20px; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>
+                            Contact Sales
+                        </button>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; 
+                        background: rgba(44, 90, 160, 0.03); border-radius: 50%; z-index: 0;"></div>
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; 
+                        background: rgba(44, 90, 160, 0.05); border-radius: 50%; z-index: 0;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Calculator Styles -->
+    <style>
+        /* Base styles for the calculator section */
+        .calculator-container, .car-info {
+            direction: ltr;
+        }
+        
+        /* Input focus styles */
+        input:focus {
+            outline: none;
+            border-color: #3a7bd5 !important;
+            box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2) !important;
+        }
+        
+        /* Button hover effect */
+        #calculateBtn:hover .btn-overlay {
+            opacity: 1;
+        }
+        
+        /* Term button hover effect */
+        .term-btn:not(.active):hover {
+            background: #f1f5f9 !important;
+            border-color: #d1d5db !important;
+        }
+        
+        /* Input number arrows */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+        
+        /* Contact sales button hover */
+        #contactSalesBtn:hover {
+            background: #2c5aa0 !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.2);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .calculator-wrapper {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+            
+            .calculator-container, .car-info {
+                padding: 25px !important;
+            }
+            
+            .term-options {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .term-options {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .calculator-container, .car-info {
+                padding: 20px 15px !important;
+            }
+        }
+    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
